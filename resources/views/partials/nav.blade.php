@@ -16,7 +16,7 @@
  <nav class="navbar">
      <div class="container nav-content">
          <div class="logo">
-             <h1>Exclusive</h1>
+             <h1>ShantoGiftShop</h1>
          </div>
 
          <ul class="nav-links">
@@ -187,4 +187,112 @@ ul {
     font-size: 20px;
     /* Icon size */
 }
+
+
+/* Responsive Navbar & Header */
+
+/* Tablet & Smaller Desktop (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 24px;
+        font-size: 14px;
+    }
+
+    .search-box {
+        width: 180px;
+    }
+
+    .nav-actions {
+        gap: 16px;
+    }
+}
+
+/* Tablet Portrait (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    /* Top Header Adjustments */
+    .top-header-content {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .promo-text {
+        font-size: 12px;
+    }
+
+    .language-selector {
+        align-self: center;
+    }
+
+    /* Navbar Adjustments */
+    .navbar {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        order: 2; /* Move links below search on mobile if desired, or keep as is */
+    }
+
+    .nav-actions {
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        order: 3;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .top-header {
+        display: none; /* Often hidden on very small screens to save space */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        padding: 10px 0;
+        background-color: #f9f9f9; /* Slight background to distinguish */
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    .nav-actions {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .icons {
+        justify-content: center;
+        width: 100%;
+        gap: 24px;
+    }
+}
+
 </style>

@@ -111,7 +111,7 @@
                         <button><i class="far fa-heart"></i></button>
                         <button><i class="far fa-eye"></i></button>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1600080972464-8e5f35f63d88?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                    <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
                         alt="Gamepad">
                     <button class="add-to-cart-btn">Add To Cart</button>
                 </div>
@@ -142,7 +142,7 @@
                         <button><i class="far fa-heart"></i></button>
                         <button><i class="far fa-eye"></i></button>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1587829741301-dc798b91a603?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                    <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
                         alt="Keyboard">
                     <button class="add-to-cart-btn">Add To Cart</button>
                 </div>
@@ -226,11 +226,104 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Product Card 4 -->
+            <div class="product-card">
+                <div class="card-header">
+                    <span class="discount-badge">-25%</span>
+                    <div class="card-icons">
+                        <button><i class="far fa-heart"></i></button>
+                        <button><i class="far fa-eye"></i></button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                        alt="Chair">
+                    <button class="add-to-cart-btn">Add To Cart</button>
+                </div>
+                <div class="card-details">
+                    <h3 class="product-name">S-Series Comfort Chair</h3>
+                    <div class="price">
+                        <span class="current-price">$375</span>
+                        <span class="original-price">$400</span>
+                    </div>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="review-count">(99)</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <div class="card-header">
+                    <span class="discount-badge">-30%</span>
+                    <div class="card-icons">
+                        <button><i class="far fa-heart"></i></button>
+                        <button><i class="far fa-eye"></i></button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                        alt="Monitor">
+                    <button class="add-to-cart-btn">Add To Cart</button>
+                </div>
+                <div class="card-details">
+                    <h3 class="product-name">IPS LCD Gaming Monitor</h3>
+                    <div class="price">
+                        <span class="current-price">$370</span>
+                        <span class="original-price">$400</span>
+                    </div>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="review-count">(99)</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Product Card 4 -->
+            <div class="product-card">
+                <div class="card-header">
+                    <span class="discount-badge">-25%</span>
+                    <div class="card-icons">
+                        <button><i class="far fa-heart"></i></button>
+                        <button><i class="far fa-eye"></i></button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                        alt="Chair">
+                    <button class="add-to-cart-btn">Add To Cart</button>
+                </div>
+                <div class="card-details">
+                    <h3 class="product-name">S-Series Comfort Chair</h3>
+                    <div class="price">
+                        <span class="current-price">$375</span>
+                        <span class="original-price">$400</span>
+                    </div>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="review-count">(99)</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- View All Button -->
         <div class="view-all-container">
-            <button class="view-all-btn">View All Products</button>
+            <a href="#" class="view-all-btn">View All Products</a>
         </div>
 
         <hr class="section-divider">
@@ -247,12 +340,12 @@
                 <span class="tag-text">Categories</span>
             </div>
             <div class="section-title-row">
-                <h2>Browse By Category</h2>
+                <h2>Available Categories</h2>
 
-                <div class="nav-arrows">
+                <!-- <div class="nav-arrows">
                     <button class="arrow-btn"><i class="fas fa-arrow-left"></i></button>
                     <button class="arrow-btn"><i class="fas fa-arrow-right"></i></button>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -311,7 +404,7 @@
             </div>
             <div class="best-selling-row">
                 <h2>Best Selling Products</h2>
-                <button class="view-all-btn-small">View All</button>
+                <a href="#" class="view-all-btn-small">View All</a>
             </div>
         </div>
 
@@ -450,12 +543,12 @@
 
                 <div class="music-countdown">
                     <div class="circle-timer">
-                        <span class="number">23</span>
-                        <span class="unit">Hours</span>
-                    </div>
-                    <div class="circle-timer">
                         <span class="number">05</span>
                         <span class="unit">Days</span>
+                    </div>
+                    <div class="circle-timer">
+                        <span class="number">23</span>
+                        <span class="unit">Hours</span>
                     </div>
                     <div class="circle-timer">
                         <span class="number">59</span>
@@ -467,7 +560,7 @@
                     </div>
                 </div>
 
-                <button class="buy-now-btn-green">Buy Now!</button>
+                <a href="#" class="buy-now-btn-green">Buy Now!</a>
             </div>
 
             <div class="music-image">
@@ -740,7 +833,7 @@
 
         <!-- View All Button -->
         <div class="view-all-container">
-            <button class="view-all-btn">View All Products</button>
+            <a href="#" class="view-all-btn">View All Products</a>
         </div>
     </div>
 </section>
@@ -856,44 +949,180 @@
 
 
 <!-- Scroll to Top Button -->
-<a href="#" class="scroll-to-top">
+<a href="{{ route('home') }}" class="scroll-to-top">
     <i class="fas fa-arrow-up"></i>
 </a>
-<!-- JS for Banner Slider -->
+
 <script>
-(function () {
-  const track = document.querySelector('.banner-image .slider-track');
-  const slides = track ? Array.from(track.querySelectorAll('img')) : [];
-  const dotsContainer = document.querySelector('.pagination-dots');
-  const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.dot')) : [];
-  if (!track || slides.length === 0) return;
+// JS for Banner Slider
+(function() {
+    const track = document.querySelector('.banner-image .slider-track');
+    const slides = track ? Array.from(track.querySelectorAll('img')) : [];
+    const dotsContainer = document.querySelector('.pagination-dots');
+    const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.dot')) : [];
+    if (!track || slides.length === 0) return;
 
-  let index = 0, count = slides.length, timer = null, interval = 4000;
+    let index = 0,
+        count = slides.length,
+        timer = null,
+        interval = 4000;
 
-  if (dots.length !== count && dotsContainer) {
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < count; i++) {
-      const span = document.createElement('span');
-      span.className = 'dot' + (i === 0 ? ' active' : '');
-      dotsContainer.appendChild(span);
+    if (dots.length !== count && dotsContainer) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < count; i++) {
+            const span = document.createElement('span');
+            span.className = 'dot' + (i === 0 ? ' active' : '');
+            dotsContainer.appendChild(span);
+        }
     }
-  }
 
-  const getDots = () => Array.from(document.querySelectorAll('.pagination-dots .dot'));
+    const getDots = () => Array.from(document.querySelectorAll('.pagination-dots .dot'));
 
-  function updateActiveDot() { getDots().forEach((d,i)=>d.classList.toggle('active', i===index)); }
-  function goTo(i) { index = (i + count) % count; track.style.transform = `translateX(-${index*100}%)`; updateActiveDot(); }
+    function updateActiveDot() {
+        getDots().forEach((d, i) => d.classList.toggle('active', i === index));
+    }
 
-  getDots().forEach((d,i)=> d.addEventListener('click', ()=>{ stop(); goTo(i); start(); }));
+    function goTo(i) {
+        index = (i + count) % count;
+        track.style.transform = `translateX(-${index*100}%)`;
+        updateActiveDot();
+    }
 
-  function next(){ goTo(index+1); }
-  function start(){ stop(); timer = setInterval(next, interval); }
-  function stop(){ if(timer) clearInterval(timer); timer=null; }
+    getDots().forEach((d, i) => d.addEventListener('click', () => {
+        stop();
+        goTo(i);
+        start();
+    }));
 
-  const hero = document.querySelector('.hero-banner');
-  if (hero) { hero.addEventListener('mouseenter', stop); hero.addEventListener('mouseleave', start); }
+    function next() {
+        goTo(index + 1);
+    }
 
-  start();
+    function start() {
+        stop();
+        timer = setInterval(next, interval);
+    }
+
+    function stop() {
+        if (timer) clearInterval(timer);
+        timer = null;
+    }
+
+    const hero = document.querySelector('.hero-banner');
+    if (hero) {
+        hero.addEventListener('mouseenter', stop);
+        hero.addEventListener('mouseleave', start);
+    }
+
+    start();
+})();
+
+
+
+// Flash Sales Countdown & Slider
+(function() {
+    // Countdown Timer
+    const countdownDate = new Date();
+    countdownDate.setDate(countdownDate.getDate() + 3); // 3 days from now
+
+    function updateTimer() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const timeUnits = document.querySelectorAll('.flash-sales-row .time-unit .value');
+        if (timeUnits.length === 4) {
+            timeUnits[0].innerText = days < 10 ? '0' + days : days;
+            timeUnits[1].innerText = hours < 10 ? '0' + hours : hours;
+            timeUnits[2].innerText = minutes < 10 ? '0' + minutes : minutes;
+            timeUnits[3].innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    // Product Slider Navigation
+    const productList = document.querySelector('.flash-sales-section .product-list');
+    const leftArrow = document.querySelector('.flash-sales-row .nav-arrows .arrow-btn:first-child');
+    const rightArrow = document.querySelector('.flash-sales-row .nav-arrows .arrow-btn:last-child');
+
+    if (productList && leftArrow && rightArrow) {
+        rightArrow.addEventListener('click', () => {
+            productList.scrollBy({
+                left: 270,
+                behavior: 'smooth'
+            });
+        });
+
+        leftArrow.addEventListener('click', () => {
+            productList.scrollBy({
+                left: -270,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+
+
+
+    // Music Banner Countdown
+    (function() {
+        const musicCountdownDate = new Date();
+        musicCountdownDate.setDate(musicCountdownDate.getDate() + 5); // 5 days from now
+
+        function updateMusicTimer() {
+            const now = new Date().getTime();
+            const distance = musicCountdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const timerNumbers = document.querySelectorAll('.music-countdown .circle-timer .number');
+
+            if (timerNumbers.length === 4) {
+                timerNumbers[0].innerText = days < 10 ? '0' + days : days;
+                timerNumbers[1].innerText = hours < 10 ? '0' + hours : hours;
+                timerNumbers[2].innerText = minutes < 10 ? '0' + minutes : minutes;
+                timerNumbers[3].innerText = seconds < 10 ? '0' + seconds : seconds;
+            }
+        }
+        setInterval(updateMusicTimer, 1000);
+        updateMusicTimer();
+    })();
+
+
+
+
+
+
+    // Explore Products Slider Navigation
+    const exploreGrid = document.querySelector('.explore-products-section .product-grid-explore');
+    const exploreLeftArrow = document.querySelector(
+        '.explore-products-section .section-header .nav-arrows .arrow-btn:first-child');
+    const exploreRightArrow = document.querySelector(
+        '.explore-products-section .section-header .nav-arrows .arrow-btn:last-child');
+
+    if (exploreGrid && exploreLeftArrow && exploreRightArrow) {
+        exploreRightArrow.addEventListener('click', () => {
+            exploreGrid.scrollBy({
+                left: 270,
+                behavior: 'smooth'
+            });
+        });
+
+        exploreLeftArrow.addEventListener('click', () => {
+            exploreGrid.scrollBy({
+                left: -270,
+                behavior: 'smooth'
+            });
+        });
+    }
 })();
 </script>
 @endsection
@@ -1043,6 +1272,8 @@
 
 
 
+
+
 /*  Flash Sales Section  */
 
 .flash-sales-section {
@@ -1155,20 +1386,35 @@
 
 /* Product List Grid */
 .product-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 30px;
     margin-bottom: 60px;
     overflow-x: auto;
-    /* Allow scrolling if needed on smaller screens */
+    /* Allow scrolling */
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
     padding-bottom: 10px;
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+}
+
+.product-list::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar Chrome/Safari */
 }
 
 .product-card {
+    min-width: 270px;
+    /* Ensure fixed width for cards in slider */
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
+
+
+
+
+
 
 .card-header {
     position: relative;
@@ -1596,8 +1842,19 @@
 .product-grid-explore {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 30px;
     margin-bottom: 60px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+    padding-bottom: 10px;
+}
+
+.product-grid-explore::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar Chrome/Safari */
 }
 
 .view-all-container {

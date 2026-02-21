@@ -74,7 +74,7 @@
 
     <div class="footer-bottom">
         <div class="container">
-            <p>&copy; Copyright Rimel 2022. All right reserved</p>
+            <p>&copy; Copyright ShatoGiftShop 2026. All right reserved</p>
         </div>
     </div>
 </footer>

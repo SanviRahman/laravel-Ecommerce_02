@@ -32,16 +32,25 @@
                 <a href="#" class="shop-now-btn">Shop Now <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="banner-image">
-                <!-- Placeholder image for iPhone -->
-                <img src="https://images.unsplash.com/photo-1678652197831-2d180705cd2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="iPhone 14">
+                <div class="slider-track">
+                    <img src="https://images.unsplash.com/photo-1678652197831-2d180705cd2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="iPhone 14 - 1">
+                    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="iPhone 14 - 2">
+                    <img src="https://images.unsplash.com/photo-1678652197831-2d180705cd2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="iPhone 14 - 3">
+                    <img src="https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="iPhone 14 - 4">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="iPhone 14 - 5">
+                </div>
             </div>
 
             <!-- Pagination Dots -->
             <div class="pagination-dots">
-                <span class="dot"></span>
-                <span class="dot"></span>
                 <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
             </div>
@@ -850,7 +859,43 @@
 <a href="#" class="scroll-to-top">
     <i class="fas fa-arrow-up"></i>
 </a>
+<!-- JS for Banner Slider -->
+<script>
+(function () {
+  const track = document.querySelector('.banner-image .slider-track');
+  const slides = track ? Array.from(track.querySelectorAll('img')) : [];
+  const dotsContainer = document.querySelector('.pagination-dots');
+  const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.dot')) : [];
+  if (!track || slides.length === 0) return;
 
+  let index = 0, count = slides.length, timer = null, interval = 4000;
+
+  if (dots.length !== count && dotsContainer) {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < count; i++) {
+      const span = document.createElement('span');
+      span.className = 'dot' + (i === 0 ? ' active' : '');
+      dotsContainer.appendChild(span);
+    }
+  }
+
+  const getDots = () => Array.from(document.querySelectorAll('.pagination-dots .dot'));
+
+  function updateActiveDot() { getDots().forEach((d,i)=>d.classList.toggle('active', i===index)); }
+  function goTo(i) { index = (i + count) % count; track.style.transform = `translateX(-${index*100}%)`; updateActiveDot(); }
+
+  getDots().forEach((d,i)=> d.addEventListener('click', ()=>{ stop(); goTo(i); start(); }));
+
+  function next(){ goTo(index+1); }
+  function start(){ stop(); timer = setInterval(next, interval); }
+  function stop(){ if(timer) clearInterval(timer); timer=null; }
+
+  const hero = document.querySelector('.hero-banner');
+  if (hero) { hero.addEventListener('mouseenter', stop); hero.addEventListener('mouseleave', start); }
+
+  start();
+})();
+</script>
 @endsection
 
 @push('styles')
@@ -948,7 +993,8 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    max-width: 50%;
+    width: 50%;
+    overflow: hidden;
 }
 
 .banner-image img {
@@ -982,6 +1028,18 @@
     /* White border for active dot */
 }
 
+
+.slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+}
+
+.slider-track img {
+    flex: 0 0 100%;
+    display: block;
+}
 
 
 

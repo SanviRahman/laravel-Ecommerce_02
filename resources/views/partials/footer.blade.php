@@ -78,11 +78,6 @@
         </div>
     </div>
 </footer>
-
-
-
-
-
 <style>
 /* Footer Section */
 .footer {

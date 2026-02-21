@@ -16,7 +16,7 @@
  <nav class="navbar">
      <div class="container nav-content">
          <div class="logo">
-             <h1>ShantoGiftShop</h1>
+             <h1>Shanto<span style="color: #e03939;">Gift</span>Shop</h1>
          </div>
 
          <ul class="nav-links">

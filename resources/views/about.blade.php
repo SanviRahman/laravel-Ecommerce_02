@@ -96,8 +96,7 @@
                 <!-- Team Member 1 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="{{ asset('images/sanvi-01.jpg') }}"
-                            alt="Tom Cruise">
+                        <img src="{{ asset('images/sanvi-01.jpg') }}" alt="Tom Cruise">
                     </div>
                     <h3 class="team-name">Tom Cruise</h3>
                     <p class="team-role">Founder & Chairman</p>
@@ -111,8 +110,7 @@
                 <!-- Team Member 2 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="{{ asset('images/sanvi-01.jpg') }}"
-                            alt="Emma Watson">
+                        <img src="{{ asset('images/sanvi-01.jpg') }}" alt="Emma Watson">
                     </div>
                     <h3 class="team-name">Emma Watson</h3>
                     <p class="team-role">Managing Director</p>
@@ -126,8 +124,7 @@
                 <!-- Team Member 3 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="{{ asset('images/sanvi-01.jpg') }}"
-                            alt="Will Smith">
+                        <img src="{{ asset('images/sanvi-01.jpg') }}" alt="Will Smith">
                     </div>
                     <h3 class="team-name">Will Smith</h3>
                     <p class="team-role">Product Designer</p>
@@ -141,8 +138,7 @@
                 <!-- Team Member 4 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="{{ asset('images/sanvi-01.jpg') }}"
-                            alt="Tom Cruise">
+                        <img src="{{ asset('images/sanvi-01.jpg') }}" alt="Tom Cruise">
                     </div>
                     <h3 class="team-name">Tom Cruise</h3>
                     <p class="team-role">Founder & Chairman</p>
@@ -156,8 +152,7 @@
                 <!-- Team Member 5 -->x
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="{{ asset('images/sanvi-01.jpg') }}"
-                            alt="Emma Watson">
+                        <img src="{{ asset('images/sanvi-01.jpg') }}" alt="Emma Watson">
                     </div>
                     <h3 class="team-name">Emma Watson</h3>
                     <p class="team-role">Managing Director</p>
@@ -171,8 +166,7 @@
                 <!-- Team Member 6 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="{{ asset('images/sanvi-01.jpg') }}"
-                            alt="Tom Cruise">
+                        <img src="{{ asset('images/sanvi-01.jpg') }}" alt="Tom Cruise">
                     </div>
                     <h3 class="team-name">Tom Cruise</h3>
                     <p class="team-role">Founder & Chairman</p>
@@ -242,24 +236,39 @@
 (function() {
     const slider = document.querySelector('.team-slider');
     const dots = document.querySelectorAll('.team-pagination .dot');
+    const wrapper = document.querySelector('.team-slider-wrapper');
 
-    if (!slider || !dots.length) return;
+    if (!slider || !dots.length || !wrapper) return;
 
     let currentIndex = 0;
     let totalSlides = dots.length;
     let autoScrollInterval;
+    let cardWidth = 0;
+    let gap = 30;
 
-    function updateSlider() {
+    function calculateCardWidth() {
         const card = slider.querySelector('.team-card');
         if (!card) return;
 
-        const cardWidth = card.offsetWidth;
-        const gap = 30; // CSS gap
-        const moveAmount = (cardWidth + gap) * currentIndex;
+        // Get actual card width including gap
+        cardWidth = card.offsetWidth;
 
-        // Right to Left movement (negative transform)
-        slider.style.transform = `translateX(-${moveAmount}px)`;
+        // Get gap from computed style
+        const sliderStyle = window.getComputedStyle(slider);
+        gap = parseInt(sliderStyle.gap) || 30;
+    }
+
+    function updateSlider() {
+        calculateCardWidth();
+
+        if (cardWidth === 0) return;
+
+        // Calculate total width to move
+        const totalWidth = (cardWidth + gap) * currentIndex;
+
+        // Apply transform with smooth transition
         slider.style.transition = 'transform 0.5s ease-in-out';
+        slider.style.transform = `translateX(-${totalWidth}px)`;
 
         // Update dots
         dots.forEach((dot, index) => {
@@ -278,11 +287,17 @@
     }
 
     function nextSlide() {
+        calculateCardWidth();
+
+        if (cardWidth === 0) return;
+
         currentIndex++;
+
+        // Check if we've reached the end
         if (currentIndex >= totalSlides) {
-            // Smooth loop back to start
             currentIndex = 0;
         }
+
         updateSlider();
     }
 
@@ -290,7 +305,7 @@
         if (autoScrollInterval) {
             clearInterval(autoScrollInterval);
         }
-        autoScrollInterval = setInterval(nextSlide, 2500); // 1.5 seconds
+        autoScrollInterval = setInterval(nextSlide, 2600); // 2.6 seconds
     }
 
     function stopAutoScroll() {
@@ -305,7 +320,7 @@
             stopAutoScroll();
             currentIndex = index;
             updateSlider();
-            startAutoScroll(); // Restart auto scroll after manual click
+            startAutoScroll();
         });
 
         // Touch events for mobile
@@ -327,13 +342,21 @@
     slider.addEventListener('touchend', startAutoScroll);
 
     // Handle responsive resize
+    let resizeTimer;
     window.addEventListener('resize', () => {
-        updateSlider();
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            calculateCardWidth();
+            updateSlider();
+        }, 250);
     });
 
-    // Initial update and start
-    updateSlider();
-    startAutoScroll();
+    // Initial setup
+    setTimeout(() => {
+        calculateCardWidth();
+        updateSlider();
+        startAutoScroll();
+    }, 100);
 
     // Handle visibility change (pause when tab is not active)
     document.addEventListener('visibilitychange', () => {
@@ -536,17 +559,16 @@
     overflow: hidden;
     margin-bottom: 32px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
 }
 
 .team-image img {
-    max-width: 80%;
-    max-height: 90%;
-    object-fit: contain;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    border-radius: 6px;
+    background-color: #F5F5F5;
 }
 
 .team-name {
@@ -687,7 +709,7 @@
     }
 
     .team-image {
-        height: 380px;
+        height: 350px;
     }
 }
 
@@ -741,21 +763,61 @@
         padding-bottom: 100px;
     }
 
+    .team-slider-wrapper {
+        overflow: hidden;
+        margin-bottom: 30px;
+        padding: 0 5px;
+        /* সামান্য padding দিয়ে সুরক্ষিত */
+    }
+
     .team-slider {
+        display: flex;
         gap: 20px;
+        transition: transform 0.5s ease-in-out;
     }
 
     .team-card {
-        min-width: 280px;
+        min-width: 320px;
         flex: 0 0 calc(50% - 10px);
+        background: #fff;
+        /* ব্যাকগ্রাউন্ড যোগ করুন */
+        border-radius: 8px;
+        padding: 10px;
+        /* প্যাডিং যোগ করুন */
     }
 
     .team-image {
-        height: 350px;
+        height: 300px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     .team-name {
-        font-size: 28px;
+        font-size: 24px;
+        margin-bottom: 6px;
+        white-space: normal;
+        /* টেক্সট যেন মোড়ানো যায় */
+        word-wrap: break-word;
+    }
+
+    .team-role {
+        font-size: 15px;
+        margin-bottom: 12px;
+        white-space: normal;
+    }
+
+    .team-socials {
+        gap: 14px;
+    }
+
+    .team-socials a {
+        font-size: 18px;
     }
 
     /* Services Section */
@@ -831,25 +893,37 @@
 
     /* Team Section */
     .team-section {
-        padding-bottom: 80px;
+        padding-bottom: 60px;
     }
 
     .team-slider-wrapper {
-        margin-bottom: 30px;
+        overflow: hidden;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+
+    .team-slider {
+        gap: 15px;
     }
 
     .team-card {
-        min-width: 260px;
-        flex: 0 0 calc(100% - 20px);
+        min-width: 280px;
+        flex: 0 0 calc(100% - 30px);
+        /* Full width with margin */
+        padding: 8px;
     }
 
     .team-image {
-        height: 320px;
-        margin-bottom: 24px;
+        height: 260px;
+        margin-bottom: 18px;
     }
 
     .team-name {
-        font-size: 26px;
+        font-size: 22px;
+    }
+
+    .team-role {
+        font-size: 14px;
     }
 
     .team-socials {
@@ -906,34 +980,22 @@
 
     .stats-container {
         grid-template-columns: 1fr;
-        max-width: 300px;
+        max-width: 320px;
         margin: 0 auto;
     }
 
     .stat-card {
-        padding: 25px;
-    }
-
-    /* Touch hover effect for stats */
-    .stat-card:active {
-        background-color: #DB4444;
-        border-color: #DB4444;
-        color: #FAFAFA;
-    }
-
-    .stat-card:active .stat-icon-wrapper {
-        background-color: #FAFAFA;
-        border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .stat-card:active .stat-icon {
-        background-color: #FAFAFA;
-        color: #000;
+        padding: 20px;
     }
 
     /* Team Section */
     .team-section {
-        padding-bottom: 60px;
+        padding-bottom: 50px;
+    }
+
+    .team-slider-wrapper {
+        padding: 0 15px;
+        margin-bottom: 20px;
     }
 
     .team-slider {
@@ -941,29 +1003,37 @@
     }
 
     .team-card {
-        min-width: 240px;
+        min-width: 260px;
+        flex: 0 0 calc(100% - 30px);
+        padding: 8px;
     }
 
     .team-image {
-        height: 280px;
-        margin-bottom: 20px;
+        height: 240px;
+        margin-bottom: 16px;
     }
 
     .team-name {
-        font-size: 22px;
+        font-size: 20px;
+        margin-bottom: 4px;
     }
 
     .team-role {
-        font-size: 14px;
-        margin-bottom: 12px;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .team-socials {
+        gap: 12px;
     }
 
     .team-socials a {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .team-pagination {
-        gap: 10px;
+        gap: 8px;
+        margin-top: 20px;
     }
 
     .team-pagination .dot {
@@ -977,27 +1047,90 @@
     }
 
     .service-icon-outer {
-        width: 70px;
-        height: 70px;
+        width: 65px;
+        height: 65px;
     }
 
     .service-icon-inner {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
     }
 
     .service-item h3 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .service-item p {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
 
-/* Mobile Portrait (320px to 479px) */
-@media screen and (max-width: 479px) {
+/* iPhone 14 Pro Max and similar devices (430px) */
+@media screen and (min-width: 420px) and (max-width: 440px) {
+    .team-section {
+        padding-bottom: 45px;
+    }
+
+    .team-slider-wrapper {
+        padding: 0 15px;
+    }
+
+    .team-slider {
+        gap: 15px;
+    }
+
+    .team-card {
+        min-width: 280px;
+        flex: 0 0 calc(100% - 30px);
+        padding: 10px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .team-image {
+        height: 250px;
+        margin-bottom: 15px;
+    }
+
+    .team-name {
+        font-size: 22px;
+        margin-bottom: 5px;
+        line-height: 1.3;
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    .team-role {
+        font-size: 14px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    .team-socials {
+        gap: 15px;
+        padding-left: 5px;
+    }
+
+    .team-socials a {
+        font-size: 18px;
+    }
+
+    .team-pagination {
+        margin-top: 25px;
+    }
+
+    .team-pagination .dot {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Mobile Portrait (320px to 419px) */
+@media screen and (max-width: 419px) {
     .breadcrumb-container {
         margin-top: 20px;
     }
@@ -1014,7 +1147,7 @@
     }
 
     .story-title {
-        font-size: 26px;
+        font-size: 24px;
         margin-bottom: 20px;
     }
 
@@ -1030,24 +1163,24 @@
     }
 
     .stat-card {
-        padding: 20px;
+        padding: 15px;
     }
 
     .stat-icon-wrapper {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 16px;
+        width: 55px;
+        height: 55px;
+        margin-bottom: 15px;
     }
 
     .stat-icon {
-        width: 44px;
-        height: 44px;
-        font-size: 16px;
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
     }
 
     .stat-number {
-        font-size: 20px;
-        margin-bottom: 6px;
+        font-size: 18px;
+        margin-bottom: 5px;
     }
 
     .stat-desc {
@@ -1056,20 +1189,27 @@
 
     /* Team Section */
     .team-section {
-        padding-bottom: 40px;
+        padding-bottom: 35px;
+    }
+
+    .team-slider-wrapper {
+        padding: 0 10px;
+        margin-bottom: 15px;
     }
 
     .team-slider {
-        gap: 10px;
+        gap: 12px;
     }
 
     .team-card {
-        min-width: 200px;
+        min-width: 220px;
+        flex: 0 0 calc(100% - 24px);
+        padding: 6px;
     }
 
     .team-image {
-        height: 220px;
-        margin-bottom: 16px;
+        height: 200px;
+        margin-bottom: 12px;
     }
 
     .team-name {
@@ -1079,7 +1219,7 @@
 
     .team-role {
         font-size: 12px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     .team-socials {
@@ -1087,11 +1227,11 @@
     }
 
     .team-socials a {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .team-pagination {
-        margin-top: 30px;
+        margin-top: 15px;
     }
 
     .team-pagination .dot {
@@ -1105,58 +1245,24 @@
     }
 
     .service-icon-outer {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 16px;
+        width: 55px;
+        height: 55px;
+        margin-bottom: 12px;
     }
 
     .service-icon-inner {
-        width: 44px;
-        height: 44px;
-        font-size: 16px;
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
     }
 
     .service-item h3 {
-        font-size: 16px;
-        margin-bottom: 6px;
+        font-size: 15px;
+        margin-bottom: 4px;
     }
 
     .service-item p {
-        font-size: 12px;
-    }
-}
-
-/* Extra Small Devices (up to 359px) */
-@media screen and (max-width: 359px) {
-    .story-title {
-        font-size: 22px;
-    }
-
-    .team-card {
-        min-width: 180px;
-    }
-
-    .team-image {
-        height: 180px;
-    }
-
-    .team-name {
-        font-size: 16px;
-    }
-
-    .stat-card {
-        padding: 15px;
-    }
-
-    .stat-icon-wrapper {
-        width: 50px;
-        height: 50px;
-    }
-
-    .stat-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 14px;
+        font-size: 11px;
     }
 }
 

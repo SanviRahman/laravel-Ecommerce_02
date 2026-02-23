@@ -110,7 +110,7 @@
                 <!-- Team Member 2 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="{{ asset('images/sanvi-01.jpg') }}" alt="Emma Watson">
+                        <img src="{{ asset('images/sanvi-02.jpg') }}" alt="Emma Watson">
                     </div>
                     <h3 class="team-name">Emma Watson</h3>
                     <p class="team-role">Managing Director</p>
@@ -138,7 +138,7 @@
                 <!-- Team Member 4 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="{{ asset('images/sanvi-01.jpg') }}" alt="Tom Cruise">
+                        <img src="{{ asset('images/sanvi-02.jpg') }}" alt="Tom Cruise">
                     </div>
                     <h3 class="team-name">Tom Cruise</h3>
                     <p class="team-role">Founder & Chairman</p>
@@ -166,7 +166,7 @@
                 <!-- Team Member 6 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="{{ asset('images/sanvi-01.jpg') }}" alt="Tom Cruise">
+                        <img src="{{ asset('images/sanvi-02.jpg') }}" alt="Tom Cruise">
                     </div>
                     <h3 class="team-name">Tom Cruise</h3>
                     <p class="team-role">Founder & Chairman</p>
@@ -565,7 +565,7 @@
 
 .team-image img {
     width: 100%;
-    height: 100%;
+    height: 60%;
     object-fit: contain;
     border-radius: 6px;
     background-color: #F5F5F5;

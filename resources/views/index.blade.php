@@ -1,8 +1,8 @@
 @extends('home.layout')
 
+@section('title', 'Home - ShantoGiftShop')
 
 @section('content')
-
 <!-- Hero Section -->
 <section class="hero-section">
     <div class="container hero-container">
@@ -341,11 +341,6 @@
             </div>
             <div class="section-title-row">
                 <h2>Available Categories</h2>
-
-                <!-- <div class="nav-arrows">
-                    <button class="arrow-btn"><i class="fas fa-arrow-left"></i></button>
-                    <button class="arrow-btn"><i class="fas fa-arrow-right"></i></button>
-                </div> -->
             </div>
         </div>
 
@@ -365,7 +360,7 @@
 
             <!-- Category Item 3: SmartWatch -->
             <div class="category-card">
-                <i class="far fa-clock"></i> <!-- Using generic clock/watch icon -->
+                <i class="far fa-clock"></i>
                 <span>SmartWatch</span>
             </div>
 
@@ -949,7 +944,7 @@
 
 
 <!-- Scroll to Top Button -->
-<a href="{{ route('home') }}" class="scroll-to-top">
+<a href="#" class="scroll-to-top">
     <i class="fas fa-arrow-up"></i>
 </a>
 

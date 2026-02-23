@@ -96,7 +96,7 @@
                 <!-- Team Member 1 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/494905487_3553664941596729_6953676062810333574_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeG2vWkB57Ad_IFhcpCqR9fgpyo1x5eh9EmnKjXHl6H0SQ572g3TNejQBDR7JZdvm3cIFQf_3r5xlHQwvUYlU6f3&_nc_ohc=qs53eDasvVMQ7kNvwF9u21L&_nc_oc=Adl_2eBgloOS0zGFmYi_KRjOifKqgVHDbOAyqXtB9RAfocMAlfUpx9kXIzCyt6sBvOE&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=KTcUFB6YGFmMpil5D0_nqQ&oh=00_AfsDjiG4nsM-KrqhoEjy6k1u1-geuXzSmtoTa3LujKGM0w&oe=69A1EE9A"
+                        <img src="{{ asset('images/sanvi-01.jpg') }}"
                             alt="Tom Cruise">
                     </div>
                     <h3 class="team-name">Tom Cruise</h3>
@@ -111,7 +111,7 @@
                 <!-- Team Member 2 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        <img src="{{ asset('images/sanvi-01.jpg') }}"
                             alt="Emma Watson">
                     </div>
                     <h3 class="team-name">Emma Watson</h3>
@@ -126,7 +126,7 @@
                 <!-- Team Member 3 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/494905487_3553664941596729_6953676062810333574_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeG2vWkB57Ad_IFhcpCqR9fgpyo1x5eh9EmnKjXHl6H0SQ572g3TNejQBDR7JZdvm3cIFQf_3r5xlHQwvUYlU6f3&_nc_ohc=qs53eDasvVMQ7kNvwF9u21L&_nc_oc=Adl_2eBgloOS0zGFmYi_KRjOifKqgVHDbOAyqXtB9RAfocMAlfUpx9kXIzCyt6sBvOE&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=KTcUFB6YGFmMpil5D0_nqQ&oh=00_AfsDjiG4nsM-KrqhoEjy6k1u1-geuXzSmtoTa3LujKGM0w&oe=69A1EE9A"
+                        <img src="{{ asset('images/sanvi-01.jpg') }}"
                             alt="Will Smith">
                     </div>
                     <h3 class="team-name">Will Smith</h3>
@@ -141,7 +141,7 @@
                 <!-- Team Member 4 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        <img src="{{ asset('images/sanvi-01.jpg') }}"
                             alt="Tom Cruise">
                     </div>
                     <h3 class="team-name">Tom Cruise</h3>
@@ -153,10 +153,10 @@
                     </div>
                 </div>
 
-                <!-- Team Member 5 -->
+                <!-- Team Member 5 -->x
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="https://scontent.fdac7-1.fna.fbcdn.net/v/t39.30808-6/494905487_3553664941596729_6953676062810333574_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeG2vWkB57Ad_IFhcpCqR9fgpyo1x5eh9EmnKjXHl6H0SQ572g3TNejQBDR7JZdvm3cIFQf_3r5xlHQwvUYlU6f3&_nc_ohc=qs53eDasvVMQ7kNvwF9u21L&_nc_oc=Adl_2eBgloOS0zGFmYi_KRjOifKqgVHDbOAyqXtB9RAfocMAlfUpx9kXIzCyt6sBvOE&_nc_zt=23&_nc_ht=scontent.fdac7-1.fna&_nc_gid=KTcUFB6YGFmMpil5D0_nqQ&oh=00_AfsDjiG4nsM-KrqhoEjy6k1u1-geuXzSmtoTa3LujKGM0w&oe=69A1EE9A"
+                        <img src="{{ asset('images/sanvi-01.jpg') }}"
                             alt="Emma Watson">
                     </div>
                     <h3 class="team-name">Emma Watson</h3>
@@ -171,7 +171,7 @@
                 <!-- Team Member 6 -->
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        <img src="{{ asset('images/sanvi-01.jpg') }}"
                             alt="Tom Cruise">
                     </div>
                     <h3 class="team-name">Tom Cruise</h3>
@@ -290,7 +290,7 @@
         if (autoScrollInterval) {
             clearInterval(autoScrollInterval);
         }
-        autoScrollInterval = setInterval(nextSlide, 3000); // 3 seconds
+        autoScrollInterval = setInterval(nextSlide, 2500); // 1.5 seconds
     }
 
     function stopAutoScroll() {

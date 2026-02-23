@@ -960,7 +960,7 @@
     let index = 0,
         count = slides.length,
         timer = null,
-        interval = 4000;
+        interval = 2600;
 
     if (dots.length !== count && dotsContainer) {
         dotsContainer.innerHTML = '';

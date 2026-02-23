@@ -24,7 +24,7 @@
 
          <ul class="nav-links">
              <li><a href="{{ route('home') }}" class="{{ request()->is('/') ? 'active' : ''}}">Home</a></li>
-             <li><a href="{{ route('contact') }}" class="{{ request()->is('contact') ? 'active' : ''}}">Contact</a></li>
+             <li><a href="#" class="{{ request()->is('contact') ? 'active' : ''}}">Contact</a></li>
              <li><a href="{{ route('about') }}" class="{{ request()->is('about') ? 'active' : ''}}">About</a></li>
              @if(!Auth::check())
              <li><a href="#" class="{{ request()->is('login') ? 'active' : ''}}">Sign Up</a></li>
@@ -39,7 +39,7 @@
              <div class="profile-dropdown">
                  <a href="#" class="profile-toggle"><i class="fas fa-user"></i></a>
                  <div class="dropdown-menu">
-                     <a href="#">
+                     <a href="{{ route('account') }}">
                          <i class="fas fa-user"></i>
                          <span>My Profile</span>
                      </a>

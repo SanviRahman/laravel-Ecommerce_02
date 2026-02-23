@@ -564,10 +564,10 @@
 }
 
 .team-image img {
-    width: 100%;
-    height: 60%;
+    width: 90%;
+    height: 65%;
     object-fit: contain;
-    border-radius: 6px;
+    border-radius: 26px;
     background-color: #F5F5F5;
 }
 

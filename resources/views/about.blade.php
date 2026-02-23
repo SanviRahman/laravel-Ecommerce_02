@@ -1,10 +1,8 @@
 @extends('home.layout')
 
-@section('title','About Us - ShantoGiftShop')
+@section('title','About US - ShantoGiftShop')
 
 @section('content')
-
-
 <!-- Breadcrumb -->
 <div class="container breadcrumb-container" style="margin-top: 90px;">
     <div class="breadcrumb">
@@ -13,7 +11,6 @@
         <span class="current">About</span>
     </div>
 </div>
-
 <!-- Our Story Section -->
 <section class="our-story-section">
     <div class="container our-story-container">
@@ -34,9 +31,6 @@
         </div>
     </div>
 </section>
-
-
-
 <!-- Stats Section -->
 <section class="stats-section">
     <div class="container stats-container">
@@ -85,9 +79,6 @@
         </div>
     </div>
 </section>
-
-
-
 <!-- Team Section -->
 <section class="team-section">
     <div class="container">
@@ -189,11 +180,6 @@
         </div>
     </div>
 </section>
-
-
-
-
-
 <!-- Services Section -->
 <section class="services-section">
     <div class="container">
@@ -231,6 +217,8 @@
         </div>
     </div>
 </section>
+
+
 <script>
 // Team Slider Logic with Right to Left Auto Scrolling
 (function() {
